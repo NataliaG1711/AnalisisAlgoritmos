@@ -1,3 +1,9 @@
+import random
+import time
+
+from matplotlib import pyplot as plt
+
+
 def matrix_chain_order(p):
     n = len(p) - 1
     m = [[0] * (n + 1) for _ in range(n + 1)]
@@ -28,5 +34,34 @@ def print_optimal_parens(s, i, j):
         print(")", end="")
 
 
-p = [30, 35, 15, 5, 10, 20, 25]
-m, s = matrix_chain_order(p)
+
+n = list(range(0, 101, 2))
+#n = [1,5,7,10]
+p = []
+times = []
+
+for size in n:
+    len_p = len(p)
+    if len_p == 0:
+        p.append(random.randint(1, 5))
+        len_p = 1
+
+    for i in range(len_p, size):
+        p.append(p[-1] + random.randint(1, 10))
+
+    #print(p)
+
+    start_time = time.perf_counter()
+    matrix_chain_order(p)
+    end_time = time.perf_counter()  
+    times.append(end_time - start_time)
+
+
+plt.figure(figsize=(8, 6))
+plt.plot(n, times, marker='o', linestyle='-', color='k')
+plt.xlabel(' Número de matrices (n)')
+plt.ylabel('Tiempo de ejecución (s)')
+plt.title('Tiempo de ejecución Matrix chain order')
+plt.grid()
+plt.show()
+

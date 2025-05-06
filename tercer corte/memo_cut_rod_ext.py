@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 def extended_memo_cut_rod(p, n):
-    r = [-1] * (n + 1)
+    r = [0] * (n + 1)
     s = [0] * (n + 1)
     for i in range(n + 1):
         r[i] = float('-inf')
@@ -34,7 +34,7 @@ def solution(s, n):
         n -= s[n]
     return result
 
-'''
+
 n = 7
 p = [1,5,8,9,10,17,17,20,24,30]
 valor, cortes = extended_memo_cut_rod(p,n)
@@ -67,17 +67,8 @@ for size in n:
 
 plt.figure(figsize=(8, 6))
 plt.plot(n, times, marker='o', linestyle='-', color='k')
-plt.xlabel('Número de puntos (n)')
+plt.xlabel('Longitud de la varilla (n)')
 plt.ylabel('Tiempo de ejecución (s)')
-plt.title('Tiempo de ejecución en función de n')
+plt.title('Tiempo de ejecución Memoized cut rod')
 plt.grid()
 plt.show()
-
-
-n = 7
-p = [1,5,8,9,10,17,17,20,24,30]
-
-valor, cortes = extended_memo_cut_rod(p, n)
-print("Valor máximo:", valor)
-print("Cortes óptimos:", cortes)
-'''

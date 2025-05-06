@@ -26,7 +26,7 @@ def print_cut_rod_solution(p, n):
         n -= s[n]  # reducir longitud varilla
     return result
 
-'''
+
 
 n = list(range(0, 1001, 5))
 #n = [1,5,7,10,1100]
@@ -54,9 +54,9 @@ for size in n:
 
 plt.figure(figsize=(8, 6))
 plt.plot(n, times, marker='o', linestyle='-', color='k')
-plt.xlabel('Número de puntos (n)')
+plt.xlabel('Longitud de la varilla (n)')
 plt.ylabel('Tiempo de ejecución (s)')
-plt.title('Tiempo de ejecución en función de n')
+plt.title('Tiempo de ejecución bottom up cut rod')
 plt.grid()
 plt.show()
-'''
+

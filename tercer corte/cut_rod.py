@@ -42,8 +42,8 @@ for size in n:
 
 plt.figure(figsize=(8, 6))
 plt.plot(n, times, marker='o', linestyle='-', color='k')
-plt.xlabel('Número de puntos (n)')
+plt.xlabel('Longitud de la varilla (n)')
 plt.ylabel('Tiempo de ejecución (s)')
-plt.title('Tiempo de ejecución en función de n')
+plt.title('Tiempo de ejecución Cut rod')
 plt.grid()
 plt.show()

@@ -42,7 +42,7 @@ for size in n:
 n_cut_rod = [x for x, y in zip(n, cut_rod_times) if y is not None]
 cut_rod_filtered = [y for y in cut_rod_times if y is not None]
 
-plt.figure(figsize=(14, 8))
+plt.figure(figsize=(8, 6))
 plt.plot(n_cut_rod, cut_rod_filtered, marker='o', linestyle='-', color='black', linewidth=1.5,
          markersize=4, label='cut_rod (recursivo)')
 plt.plot(n, memo_times, marker='s', linestyle='--', color='blue', linewidth=1.5,
