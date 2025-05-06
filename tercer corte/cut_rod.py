@@ -12,13 +12,13 @@ def cut_rod(p,n):
         for i in range (1, n+1):
             q = max(q, p[i-1] + cut_rod(p, n-i))
         return q
-''' 
+
 n = 7
 p = [1,5,8,9,10,17,17,20,24,30]
 print(cut_rod(p,n))
-'''
 
-n = list(range(0, 800, 10))
+
+n = list(range(0, 25, 2))
 #n = [1,5,7,10]
 p = []
 times = []
@@ -39,8 +39,6 @@ for size in n:
     end_time = time.perf_counter()  
     times.append(end_time - start_time)
 
-#print("Valor máximo:", valor)
-#print("Cortes óptimos:", print_cut_rod_solution(p, n))
 
 plt.figure(figsize=(8, 6))
 plt.plot(n, times, marker='o', linestyle='-', color='k')
