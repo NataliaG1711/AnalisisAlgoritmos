@@ -2,6 +2,7 @@ import random
 import time
 
 from matplotlib import pyplot as plt
+import numpy as np
 
 
 def cut_rod(p,n):
@@ -39,11 +40,15 @@ for size in n:
     end_time = time.perf_counter()  
     times.append(end_time - start_time)
 
+n2 = np.array(n)
+expo = (2**n2) / (2**n2[-1]) * max(times)
 
 plt.figure(figsize=(8, 6))
-plt.plot(n, times, marker='o', linestyle='-', color='k')
+plt.plot(n, times, marker='o', linestyle='-', color='k', label='cut rod (recursive)')
+plt.plot(n2, expo, marker='o', linestyle='-', color='purple', label='2^n')
 plt.xlabel('Longitud de la varilla (n)')
 plt.ylabel('Tiempo de ejecución (s)')
 plt.title('Tiempo de ejecución Cut rod')
+plt.legend()
 plt.grid()
 plt.show()
